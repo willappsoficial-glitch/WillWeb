@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WillWeb | Soluções Tecnológicas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="losf.png" alt="WillWeb Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="brand-name">WillWeb</span>
+                <span class="brand-slogan">Soluções Tecnológicas</span>
+            </div>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato" class="btn-destaque">Contato</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline id="bg-video">
+                <source src="intro.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1>WillWeb <span class="gradient-text">Soluções Tecnológicas</span></h1>
+            <p>Transformando ideias em sistemas inteligentes através de Desenvolvimento Web e Automação.</p>
+            <div class="hero-btns">
+                <a href="https://wa.me/5584996106961" target="_blank" class="btn-main"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+                <a href="#servicos" class="btn-outline">Conhecer Serviços</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicos" class="section">
+        <div class="container">
+            <h2 class="section-title">Nossas Soluções</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <i class="fas fa-code icon-servico"></i>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Sites institucionais e Landing Pages modernas, focadas em conversão e visibilidade.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-mobile-alt icon-servico"></i>
+                    <h3>Apps & Sistemas</h3>
+                    <p>Aplicativos personalizados (AppSheet) para gestão do seu negócio na palma da mão.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-cogs icon-servico"></i>
+                    <h3>Automação</h3>
+                    <p>Scripts (Google Apps Script) para automatizar planilhas, e-mails e processos repetitivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section dark-bg">
+        <div class="container sobre-container">
+            <div class="sobre-text">
+                <h2>A <span class="gradient-text">WillWeb</span></h2>
+                <p>Fundada por <strong>Williano Costa</strong>, a WillWeb Soluções Tecnológicas une a lógica da programação com a necessidade real de negócios.</p>
+                <p>Especialista em Google Workspace e Web Standards, nosso foco é criar ferramentas que funcionam para você.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contato-wrapper">
+                <div class="contato-info">
+    
+    <a href="https://wa.me/5584996106961" target="_blank" class="contact-link">
+        <div class="item">
+            <i class="fab fa-whatsapp"></i>
+            <p>(84) 99610-6961</p>
+        </div>
+    </a>
+
+    <a href="mailto:willianocosta.cover@gmail.com" class="contact-link">
+        <div class="item">
+            <i class="far fa-envelope"></i>
+            <p>willianocosta.cover@gmail.com</p>
+        </div>
+    </a>
+
+    <a href="https://instagram.com/papaipersonalpancreas" target="_blank" class="contact-link">
+        <div class="item">
+            <i class="fab fa-instagram"></i>
+            <p>@papaipersonalpancreas</p>
+        </div>
+    </a>
+
+</div>
+
+                <form id="contact-form">
+    <h3 style="color: white; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">
+        Vamos tirar seu projeto do papel?
+    </h3>
+
+    <input type="text" name="nome" placeholder="Qual seu nome ou o da sua empresa?" required>
+    
+    <input type="email" name="email" placeholder="Seu melhor e-mail para contato" required>
+    
+    <select name="servico" required>
+        <option value="" disabled selected>Qual solução você busca?</option>
+        <option value="Desenvolvimento Web">Quero um Site ou Landing Page</option>
+        <option value="AppSheet">Quero um Aplicativo de Gestão</option>
+        <option value="Automacao">Quero Automatizar Processos/Planilhas</option>
+        <option value="Outro">Outro / Consultoria Geral</option>
+    </select>
+
+    <textarea name="mensagem" rows="5" placeholder="Me conte um pouco sobre sua ideia ou o problema que precisa resolver..." required></textarea>
+    
+    <button type="submit" id="submit-btn" class="btn-main">
+        SOLICITAR ORÇAMENTO GRATUITO <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
+    </button>
+    
+    <p id="form-status"></p>
+</form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 WillWeb Soluções Tecnológicas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
