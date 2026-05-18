@@ -1,50 +1,48 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     
-    // --- LÓGICA DO MENU MOBILE ---
+    // 1. Efeito Navbar ao rolar a página
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // 2. Menu Mobile (Hamburguer)
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const links = document.querySelectorAll('.nav-links li a');
 
-    // 1. Ao clicar no ícone do hamburguer
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        
-        // Alterna o ícone entre 'barras' e 'X'
         const icon = menuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
     });
 
-    // 2. Ao clicar em qualquer link do menu, fecha o menu (UX melhor)
     links.forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            // Reseta o ícone para barras
             const icon = menuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
         });
     });
 
-    // --- LÓGICA DE ENVIO DE E-MAIL (APPS SCRIPT) ---
+    // 3. Integração com Google Apps Script
     const form = document.getElementById('contact-form');
     const statusMsg = document.getElementById('form-status');
-    
-    // IMPORTANTE: Cole sua URL do Apps Script aqui novamente se tiver apagado
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjpd9kZgGBhXBzDhETQUadNFXBELydEFnVSgdqwjYFrCvehjmF13Dezvr5tFX5flgdzg/exec'; 
 
-    if(form) { // Verifica se o formulário existe na página
+    if(form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
             
             const btn = document.getElementById('submit-btn');
-            const originalText = btn.textContent;
-            btn.textContent = "Enviando...";
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Processando... <i class="fas fa-spinner fa-spin"></i>';
             btn.disabled = true;
 
             let formData = new FormData(form);
@@ -53,32 +51,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 body: formData
             })
-            .then(response => {
-                statusMsg.textContent = "Mensagem enviada com sucesso! Entrarei em contato.";
-                statusMsg.style.color = "#00d2ff";
+            .then(() => {
+                statusMsg.textContent = "Solicitação enviada com sucesso! Logo entraremos em contato.";
+                statusMsg.style.color = "#00f2fe";
                 form.reset();
             })
             .catch(error => {
-                statusMsg.textContent = "Erro ao enviar. Tente pelo WhatsApp.";
-                statusMsg.style.color = "red";
-                console.error('Erro!', error.message);
+                statusMsg.textContent = "Erro ao enviar. Por favor, contate-nos via WhatsApp.";
+                statusMsg.style.color = "#ef4444";
+                console.error('Erro:', error);
             })
             .finally(() => {
-                btn.textContent = originalText;
+                btn.innerHTML = originalText;
                 btn.disabled = false;
+                
+                // Limpa a mensagem após 5 segundos
+                setTimeout(() => {
+                    statusMsg.textContent = '';
+                }, 5000);
             });
         });
     }
-
-    // --- EFEITO SCROLL NAVBAR ---
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            nav.style.background = '#050a14';
-            nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
-        } else {
-            nav.style.background = 'rgba(5, 10, 20, 0.95)';
-            nav.style.boxShadow = 'none';
-        }
-    });
 });
