@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WillWeb | Soluções Tecnológicas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>WillWeb | Soluções Tecnológicas Avançadas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo-container">
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="logo-container">
             <img src="losf.png" alt="WillWeb Logo" class="logo-img">
             <div class="logo-text">
                 <span class="brand-name">WillWeb</span>
                 <span class="brand-slogan">Soluções Tecnológicas</span>
             </div>
-        </div>
+        </a>
         
         <ul class="nav-links">
             <li><a href="#home">Início</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato" class="btn-destaque">Contato</a></li>
+            <li><a href="#servicos">Expertise</a></li>
+            <li><a href="#cases">Cases de Sucesso</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato" class="btn-glow">Fale Conosco</a></li>
         </ul>
         <div class="menu-toggle">
             <i class="fas fa-bars"></i>
@@ -31,118 +32,173 @@
     </nav>
 
     <header id="home" class="hero">
-        <div class="video-container">
-            <video autoplay muted loop playsinline id="bg-video">
-                <source src="intro.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos.
-            </video>
-            <div class="overlay"></div>
-        </div>
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="intro.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <h1>WillWeb <span class="gradient-text">Soluções Tecnológicas</span></h1>
-            <p>Transformando ideias em sistemas inteligentes através de Desenvolvimento Web e Automação.</p>
-            <div class="hero-btns">
-                <a href="https://wa.me/5584996106961" target="_blank" class="btn-main"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
-                <a href="#servicos" class="btn-outline">Conhecer Serviços</a>
+            <div class="badge">Desenvolvimento de Alta Performance</div>
+            <h1>Transformando desafios complexos em <span class="text-gradient">plataformas inteligentes.</span></h1>
+            <p>Especialistas em escalar negócios e modernizar o setor público através de sistemas sob medida, integrações de IA e automação.</p>
+            <div class="hero-actions">
+                <a href="#contato" class="btn-primary">Iniciar Projeto <i class="fas fa-arrow-right"></i></a>
+                <a href="#cases" class="btn-secondary">Ver Portfólio</a>
             </div>
         </div>
     </header>
 
     <section id="servicos" class="section">
         <div class="container">
-            <h2 class="section-title">Nossas Soluções</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <i class="fas fa-code icon-servico"></i>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sites institucionais e Landing Pages modernas, focadas em conversão e visibilidade.</p>
+            <div class="section-header">
+                <h2>Nossa <span class="text-gradient">Expertise</span></h2>
+                <p>Soluções completas para digitalização e automação de ponta a ponta.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card glass">
+                    <div class="icon-box"><i class="fas fa-landmark"></i></div>
+                    <h3>Soluções GovTech</h3>
+                    <p>Digitalização de prefeituras e órgãos públicos, transformando ambientes baseados em papel em ecossistemas digitais eficientes e transparentes.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-mobile-alt icon-servico"></i>
-                    <h3>Apps & Sistemas</h3>
-                    <p>Aplicativos personalizados (AppSheet) para gestão do seu negócio na palma da mão.</p>
+                
+                <div class="service-card glass">
+                    <div class="icon-box"><i class="fas fa-robot"></i></div>
+                    <h3>Integração com IA</h3>
+                    <p>Potencializamos seus sistemas integrando APIs de inteligência artificial de ponta, como OpenAI e Gemini, para automação cognitiva.</p>
                 </div>
-                <div class="card">
-                    <i class="fas fa-cogs icon-servico"></i>
-                    <h3>Automação</h3>
-                    <p>Scripts (Google Apps Script) para automatizar planilhas, e-mails e processos repetitivos.</p>
+                
+                <div class="service-card glass">
+                    <div class="icon-box"><i class="fas fa-mobile-screen"></i></div>
+                    <h3>Apps & Automação</h3>
+                    <p>Desenvolvimento ágil com AppSheet e Google Apps Script para automatizar fluxos de trabalho do Google Workspace.</p>
+                </div>
+                
+                <div class="service-card glass">
+                    <div class="icon-box"><i class="fas fa-tv"></i></div>
+                    <h3>Digital Signage</h3>
+                    <p>Sistemas modernos de Mídia Indoor e TV Corporativa para comunicação visual dinâmica em tempo real.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="section dark-bg">
-        <div class="container sobre-container">
-            <div class="sobre-text">
-                <h2>A <span class="gradient-text">WillWeb</span></h2>
-                <p>Fundada por <strong>Williano Costa</strong>, a WillWeb Soluções Tecnológicas une a lógica da programação com a necessidade real de negócios.</p>
-                <p>Especialista em Google Workspace e Web Standards, nosso foco é criar ferramentas que funcionam para você.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="section">
+    <section id="cases" class="section bg-darker">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
-            <div class="contato-wrapper">
-                <div class="contato-info">
-    
-    <a href="https://wa.me/5584996106961" target="_blank" class="contact-link">
-        <div class="item">
-            <i class="fab fa-whatsapp"></i>
-            <p>(84) 99610-6961</p>
+            <div class="section-header">
+                <h2>Projetos em <span class="text-gradient">Destaque</span></h2>
+                <p>Plataformas validadas no mercado que geram impacto diário.</p>
+            </div>
+            
+            <div class="cases-grid">
+                <div class="case-card glass">
+                    <div class="case-content">
+                        <span class="case-tag">SaaS Gestão Esportiva</span>
+                        <h3>Sistema MAX</h3>
+                        <p>Plataforma de alta volumetria desenvolvida para o controle de acesso via catracas e gestão de treinos, suportando mais de 1.000 registros diários.</p>
+                    </div>
+                </div>
+                
+                <div class="case-card glass">
+                    <div class="case-content">
+                        <span class="case-tag">Integração Internacional</span>
+                        <h3>LG Sprint</h3>
+                        <p>Tecnologia esportiva de ponta que passou por avaliação rigorosa e conquistou a homologação oficial da API do Strava em nível global.</p>
+                    </div>
+                </div>
+                
+                <div class="case-card glass">
+                    <div class="case-content">
+                        <span class="case-tag">Gestão de Saúde</span>
+                        <h3>LG Lab</h3>
+                        <p>Sistema abrangente criado para a otimização de rotinas laboratoriais médicas, garantindo precisão e agilidade no atendimento aos pacientes.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </a>
+    </section>
 
-    <a href="mailto:willianocosta.cover@gmail.com" class="contact-link">
-        <div class="item">
-            <i class="far fa-envelope"></i>
-            <p>willianocosta.cover@gmail.com</p>
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text glass">
+                    <h2>Visão focada em <span class="text-gradient">Escalabilidade</span></h2>
+                    <p>Fundada por <strong>Williano Costa</strong>, a WillWeb Soluções Tecnológicas nasceu da necessidade de entregar tecnologia que faz a diferença real.</p>
+                    <p>Com forte base acadêmica em Sistemas para Internet e experiência prática no mercado corporativo e público, nosso foco não é apenas criar "projetos amadores", mas sim desenvolver plataformas SaaS escaláveis que impulsionam ecossistemas inteiros.</p>
+                </div>
+                <div class="about-stats glass">
+                    <div class="stat-item">
+                        <i class="fas fa-code"></i>
+                        <h4>Web Standards</h4>
+                        <p>HTML, CSS, JS</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fab fa-google"></i>
+                        <h4>Workspace</h4>
+                        <p>AppSheet & GAS</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </a>
+    </section>
 
-    <a href="https://instagram.com/papaipersonalpancreas" target="_blank" class="contact-link">
-        <div class="item">
-            <i class="fab fa-instagram"></i>
-            <p>@papaipersonalpancreas</p>
-        </div>
-    </a>
-
-</div>
-
-                <form id="contact-form">
-    <h3 style="color: white; margin-bottom: 15px; font-family: 'Orbitron', sans-serif;">
-        Vamos tirar seu projeto do papel?
-    </h3>
-
-    <input type="text" name="nome" placeholder="Qual seu nome ou o da sua empresa?" required>
-    
-    <input type="email" name="email" placeholder="Seu melhor e-mail para contato" required>
-    
-    <select name="servico" required>
-        <option value="" disabled selected>Qual solução você busca?</option>
-        <option value="Desenvolvimento Web">Quero um Site ou Landing Page</option>
-        <option value="AppSheet">Quero um Aplicativo de Gestão</option>
-        <option value="Automacao">Quero Automatizar Processos/Planilhas</option>
-        <option value="Outro">Outro / Consultoria Geral</option>
-    </select>
-
-    <textarea name="mensagem" rows="5" placeholder="Me conte um pouco sobre sua ideia ou o problema que precisa resolver..." required></textarea>
-    
-    <button type="submit" id="submit-btn" class="btn-main">
-        SOLICITAR ORÇAMENTO GRATUITO <i class="fas fa-paper-plane" style="margin-left: 5px;"></i>
-    </button>
-    
-    <p id="form-status"></p>
-</form>
-
+    <section id="contato" class="section bg-darker">
+        <div class="container">
+            <div class="contact-container glass">
+                <div class="contact-info">
+                    <h2>Vamos tirar seu projeto do papel?</h2>
+                    <p>Seja para a iniciativa privada ou modernização pública, temos a solução.</p>
+                    
+                    <div class="contact-links">
+                        <a href="https://wa.me/5584996106961" target="_blank" class="contact-item">
+                            <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                            <span>(84) 99610-6961</span>
+                        </a>
+                        <a href="mailto:willianocosta.cover@gmail.com" class="contact-item">
+                            <div class="icon-circle"><i class="far fa-envelope"></i></div>
+                            <span>willianocosta.cover@gmail.com</span>
+                        </a>
+                        <a href="https://instagram.com/papaipersonalpancreas" target="_blank" class="contact-item">
+                            <div class="icon-circle"><i class="fab fa-instagram"></i></div>
+                            <span>@papaipersonalpancreas</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" name="nome" placeholder="Seu Nome ou Empresa" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="E-mail de Contato" required>
+                    </div>
+                    <div class="input-group">
+                        <select name="servico" required>
+                            <option value="" disabled selected>Qual o foco do projeto?</option>
+                            <option value="GovTech">Sistema para Prefeitura / GovTech</option>
+                            <option value="Desenvolvimento Web">Plataforma Web / Landing Page</option>
+                            <option value="SaaS">Sistema SaaS / AppSheet</option>
+                            <option value="IA">Integração com Inteligência Artificial</option>
+                            <option value="Digital Signage">Mídia Indoor (TV)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="mensagem" rows="4" placeholder="Descreva os detalhes da sua demanda..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn" class="btn-primary w-100">
+                        Solicitar Orçamento <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <p id="form-status" class="status-msg"></p>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 WillWeb Soluções Tecnológicas. Todos os direitos reservados.</p>
+        <div class="container">
+            <p>&copy; 2026 WillWeb Soluções Tecnológicas. Desenvolvido por Williano Costa.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
